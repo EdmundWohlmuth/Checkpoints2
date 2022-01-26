@@ -5,6 +5,7 @@ using UnityEngine;
 public class ResetPlayer : MonoBehaviour
 {
     public CharacterController player;
+    public Transform checkpoint;
     public Vector3 resetPoint;
     public Vector3 currentPos;
     Vector3 posToTeleport;
@@ -12,7 +13,7 @@ public class ResetPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        resetPoint = new Vector3(0.0f, 1.5f, 0.0f);
+        
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class ResetPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             Debug.Log("Reseting player");
+            resetPoint = checkpoint.transform.position;
             posToTeleport = resetPoint - player.transform.position;
             player.Move(posToTeleport);
         }
