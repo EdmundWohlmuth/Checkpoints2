@@ -12,15 +12,8 @@ public class TriggerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        checkpointIncriment++;
-        if (checkpointIncriment == 1)
-        {
-            resetPoint.transform.position = checkpoint1.transform.position;
-        }
-        else if (checkpointIncriment == 2)
-        {
-            resetPoint.transform.position = checkpoint2.transform.position;
-        }
+
+            resetPoint.transform.position = this.gameObject.transform.position;
         
 
         if (deleteThis == true)
